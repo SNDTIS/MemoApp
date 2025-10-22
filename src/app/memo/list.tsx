@@ -1,6 +1,6 @@
 import { JSX } from 'react'
 import { View, StyleSheet } from 'react-native'
-import { Feather } from '@expo/vector-icons'
+import Icon from '../../components/Icon'
 
 import Header from '../../components/Header'
 import MemoListItem from '../../components/MemoListItem'
@@ -17,7 +17,7 @@ const List = (): JSX.Element => {
                 <MemoListItem />
             </View>
             <CircleButton>
-                <Feather name='plus' size={40}/>
+                <Icon />
             </CircleButton>
         </View>
     )
