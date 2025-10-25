@@ -4,7 +4,6 @@ import { router } from 'expo-router'
 
 import Icon from '../../components/Icon'
 
-import Header from '../../components/Header'
 import MemoListItem from '../../components/MemoListItem'
 import CircleButton from '../../components/CircleButton'
 
@@ -15,7 +14,6 @@ const handlePress = (): void => {
 const List = (): JSX.Element => {
     return (
         <View style={styles.container}>
-            <Header />
             <View>
                 <MemoListItem />
                 <MemoListItem />
