@@ -1,6 +1,6 @@
 import { JSX } from 'react'
-import { View, StyleSheet } from 'react-native'
-import { router } from 'expo-router'
+import { Text, View, StyleSheet } from 'react-native'
+import { router, useNavigation } from 'expo-router'
 
 import Icon from '../../components/Icon'
 
@@ -12,6 +12,10 @@ const handlePress = (): void => {
 }
 
 const List = (): JSX.Element => {
+    const navigation = useNavigation()
+    navigation.setOptions({
+        headerRight: () => { return <Text>Test</Text> }
+    })
     return (
         <View style={styles.container}>
             <View>
