@@ -1,11 +1,16 @@
 import { JSX } from 'react'
 import { View, StyleSheet } from 'react-native'
+import { router } from 'expo-router'
+
 import Icon from '../../components/Icon'
 
 import Header from '../../components/Header'
 import MemoListItem from '../../components/MemoListItem'
 import CircleButton from '../../components/CircleButton'
 
+const handlePress = (): void => {
+    router.push('/memo/create')
+}
 
 const List = (): JSX.Element => {
     return (
@@ -16,7 +21,7 @@ const List = (): JSX.Element => {
                 <MemoListItem />
                 <MemoListItem />
             </View>
-            <CircleButton>
+            <CircleButton onPress={ handlePress }>
                 <Icon name='plus' size={40} color='#ffffff' />
             </CircleButton>
         </View>
