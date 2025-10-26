@@ -24,7 +24,7 @@ const handlePress = (id: string): void => {
             onPress: () => {
                 deleteDoc(ref)
                 .catch(() => {
-                    Alert.alert('Fialed Delete.')
+                    Alert.alert('Failed Delete.')
                 })
             }
         }
