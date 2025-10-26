@@ -1,11 +1,9 @@
 import { initializeApp } from 'firebase/app';
-import { initializeAuth } from 'firebase/auth';
 // @ts-ignore
-import { getReactNativePersistence } from 'firebase/auth/react-native';
+import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.EXPO_PUBLIC_FB_API_KEY,
   authDomain: process.env.EXPO_PUBLIC_FB_AUTH_DOMAIN,
@@ -15,11 +13,10 @@ const firebaseConfig = {
   appId: process.env.EXPO_PUBLIC_FB_APP_ID
 };
 
-const app = initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig);
 const auth = initializeAuth(app, {
-    persistence: getReactNativePersistence(ReactNativeAsyncStorage)
-})
+  persistence: getReactNativePersistence(ReactNativeAsyncStorage)
+});
+const db = getFirestore(app);
 
-const db = getFirestore(app)
-
-export {app, auth, db}
+export { app, auth, db };
